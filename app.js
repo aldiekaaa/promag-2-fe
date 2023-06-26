@@ -68,36 +68,6 @@ function togglePasswordRepeatVisibility() {
     }
 }
 
-// function validatePassword(event) {
-//     event.preventDefault();
-
-//     var passwordInput = document.getElementById("password_input");
-//     var passwordAlert = document.querySelector(".password-alert");
-//     var password = passwordInput.value;
-
-//     if (password === 'password123') {
-//         return true;
-//     } else {
-//         passwordInput.classList.add('border-red-500')
-//         passwordAlert.innerHTML = '<p class="text-red-500 text-xs mt-1 ml-3">Password Salah</p>';
-//     }
-// }
-
-// function validateEmail(event) {
-//     event.preventDefault();
-
-//     var emailInput = document.getElementById("email_input");
-//     var emailAlert = document.querySelector(".email-alert");
-//     var email = emailInput.value;
-
-//     if (email === 'email@em.com') {
-//         return true;
-//     } else {
-//         emailInput.classList.add('border-red-500')
-//         emailAlert.innerHTML = '<p class="text-red-500 text-xs mt-1 ml-3">Email Salah</p>';
-//     }
-// }
-
 function validateAccount(event) {
     event.preventDefault();
 
@@ -105,13 +75,12 @@ function validateAccount(event) {
     const email = document.getElementById('email_input');
     const password = document.getElementById('password_input');
     var passwordAlert = document.querySelector(".password-alert");
-    var emailAlert = document.querySelector(".email-alert");
     const emailValue = email.value
     const passValue = password.value
 
 
     if (emailValue == 'aldi@gmail.com') {
-        if (passValue == 'password123') {  
+        if (passValue == 'password123') {
             window.location.href = "/index.html"
         } else {
             password.classList.add('border-red-500')
@@ -121,4 +90,24 @@ function validateAccount(event) {
         email.classList.add('border-red-500')
         passwordAlert.innerHTML = '<p class="text-red-600 mt-1 ml-3 bg-red-200 px-5 py-1 rounded-lg">Email atau Password Salah</p>';
     }
+}
+
+// TAB PROFILE
+function openTabs(evt, tabName, tablinks) {
+
+    const btnActive = document.getElementById('tablinks');
+
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace("active", "");
+    }
+    document.getElementById(tabName).style.display = "block", "";
+    document.getElementById(tablinks).style.backgroundColor = "blue", "";
+    evt.currentTarget.className += "active";
+
 }

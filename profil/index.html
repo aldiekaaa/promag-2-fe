@@ -9,6 +9,12 @@
     <script src="https://kit.fontawesome.com/c748089771.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Profil</title>
+
+    <style>
+        .tablinks .active {
+            background-color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,17 +43,11 @@
             <!-- SIDEBAR -->
             <div class="bg-white shadow-2xl">
                 <div class="">
-                    <div class="mt-5">
-                        <ul class="">
-                            <li
-                                class="border-l-4 border-transparent focus-within:border-blue-500 focus-within:bg-blue-200 text-gray-600 focus-within:text-blue-500 duration-300 ease-linear">
-                                <button class="px-14 py-3" href="">Pengajuan</button>
-                            </li>
-                            <li
-                                class="border-l-4 border-transparent focus-within:border-blue-500 focus-within:bg-blue-200 text-gray-600 focus-within:text-blue-500 duration-300 ease-linear">
-                                <button class="px-14 py-3" href="">Data Diri</button>
-                            </li>
-                        </ul>
+                    <div class="tab mt-5 flex flex-col">
+                        <button class="px-14 py-3 tablinks bg-white active:bg-gray-600 focus:bg-sky-300 focus:border-l-4 border-l-4 border-transparent focus:border-gray-500 hover:bg-sky-300" href=""
+                            onclick="openTabs(event, 'Pengajuan')" id="tablinks">Pengajuan</button>
+                        <button class="px-14 py-3 tablinks bg-white active:bg-gray-600 focus:bg-sky-300 focus:border-l-4 border-l-4 border-transparent focus:border-gray-500 hover:bg-sky-300" href=""
+                            onclick="openTabs(event, 'DataDiri')" id="tablinks">Data Diri</button>
                         <div class="mt-[450px] xl:pb-[114px] lg:pb-[50px] mx-auto">
                             <button class="px-10 py-3 text-red-500 rounded-lg mx-auto">
                                 <i class="fa-solid fa-arrow-right-from-bracket mr-3"></i>
@@ -58,8 +58,9 @@
                 </div>
             </div>
 
-            <!-- MAIN CONTENT -->
-            <div class="w-3/4 h-[550px] mt-10 bg-white shadow-xl rounded-[50px]">
+            <!-- PENGAJUAN CONTENT -->
+            <div class="hidden w-3/4 h-[550px] mt-10 bg-white shadow-xl rounded-3xl transition-opacity tabcontent"
+                id="Pengajuan">
                 <div class="flex justify-between mt-20 mx-24">
                     <h2 class="text-3xl font-medium text-blue-500">Pengajuan Saya</h2>
                     <div class="">
@@ -73,10 +74,12 @@
                         <li class="border-b-2 py-5">
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center">
-                                    <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
+                                    <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png"
+                                        alt="">
                                     <div class="ml-10">
                                         <a href="">
-                                            <h2 class="text-lg font-medium mb-3" id="judul">Perbaikan Jembatan Ambruk Cikreteg
+                                            <h2 class="text-lg font-medium mb-3" id="judul">Perbaikan Jembatan Ambruk
+                                                Cikreteg
                                         </a>
                                         </h2>
                                         <span class="text-blue-500 " id="kategori">Rehabilitasi</span>
@@ -91,10 +94,12 @@
                         <li class="border-b-2 py-5">
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center">
-                                    <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
+                                    <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png"
+                                        alt="">
                                     <div class="ml-10">
                                         <a href="">
-                                            <h2 class="text-lg font-medium mb-3" id="judul">Perbaikan Jembatan Ambruk Cikreteg
+                                            <h2 class="text-lg font-medium mb-3" id="judul">Perbaikan Jembatan Ambruk
+                                                Cikreteg
                                         </a>
                                         </h2>
                                         <span class="text-blue-500 " id="kategori">Rehabilitasi</span>
@@ -109,10 +114,12 @@
                         <li class="border-b-2 py-5">
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center">
-                                    <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
+                                    <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png"
+                                        alt="">
                                     <div class="ml-10">
                                         <a href="">
-                                            <h2 class="text-lg font-medium mb-3" id="judul">Pembangunan Objek Wisata Kampung Babakan Cibadak
+                                            <h2 class="text-lg font-medium mb-3" id="judul">Pembangunan Objek Wisata
+                                                Kampung Babakan Cibadak
                                         </a>
                                         </h2>
                                         <span class="text-blue-500 " id="kategori">Pembangunan</span>
@@ -127,10 +134,12 @@
                         <li class="border-b-2 py-5">
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center">
-                                    <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
+                                    <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png"
+                                        alt="">
                                     <div class="ml-10">
                                         <a href="">
-                                            <h2 class="text-lg font-medium mb-3" id="judul">Sumbangan Kemanusiaan bagi Korban Bencana Alam Cianjur
+                                            <h2 class="text-lg font-medium mb-3" id="judul">Sumbangan Kemanusiaan bagi
+                                                Korban Bencana Alam Cianjur
                                         </a>
                                         </h2>
                                         <span class="text-blue-500 " id="kategori">Pembangunan</span>
@@ -145,6 +154,118 @@
                     </ul>
                 </div>
             </div>
-        </div>
+
+            <!-- DATA DIRI CONTENT -->
+            <div class="hidden px-24 py-20 w-3/4 h-[600px] mt-10 bg-white shadow-xl rounded-3xl transition-opacity fadeIn tabcontent"
+                id="DataDiri">
+                <div class="">
+                    <h2 class="text-3xl font-semibold text-blue-500">Data Diri</h2>
+                </div>
+                <div class="overflow-y-auto h-[95%]">
+                    <div class="flex justify-center gap-12 items-center m-16">
+                        <img class="h-48 w-48 object-cover rounded-full" src="/src/Slide.png" alt="">
+                        <div>
+                            <p class="mb-4 text-gray-400">Nama</p>
+                            <p class="mb-4 font-semibold">Asep</p>
+                            <p class="mb-4 text-gray-400">Email</p>
+                            <p class="mb-4 font-semibold">Lydia@email.com</p>
+                        </div>
+                    </div>
+                    <h4 class="mb-10 font-semibold">Profile</h4>
+                    <div class="flex justify-between w-full">
+                        <div class="flex gap-10">
+                            <div>
+                                <p class="mb-4 text-gray-400">Nama</p>
+                                <p class="mb-4 text-gray-400">No HP</p>
+                                <p class="mb-4 text-gray-400">Pekerjaan</p>
+                            </div>
+                            <div>
+                                <p class="mb-4 font-semibold">Lydia Carter</p>
+                                <p class="mb-4 font-semibold">08123456789</p>
+                                <p class="mb-4 font-semibold">Wiraswasta</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-10">
+                            <div>
+                                <p class="mb-4 text-gray-400">Email</p>
+                                <p class="mb-4 text-gray-400">NIK</p>
+                                <p class="mb-4 text-gray-400">Alamat</p>
+                            </div>
+                            <div class="w-80">
+                                <p class="mb-4 font-semibold">lydia@email.com</p>
+                                <p class="mb-4 font-semibold">32020301010101</p>
+                                <p class="mb-4 font-semibold">Jl. Siliwangi No.67d, Cikole, Kec. Cikole, Kota Sukabumi,
+                                    Jawa Barat 43113</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="bg-black my-6">
+                    <h4 class="mb-10 font-semibold">No Rekening</h4>
+                    <div class="flex justify-between w-full">
+                        <table>
+                            <tr>
+                                <td class="pb-4 pr-10 text-gray-400 whitespace-nowrap">No Rekening</td>
+                                <td class="pb-4 font-semibold text-ellipsis overflow-x-hidden whitespace-nowrap">
+                                    <p class="text-ellipsis overflow-x-hidden w-56">0123456789</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pb-4 pr-10 text-gray-400 whitespace-nowrap">Bank</td>
+                                <td class="pb-4 font-semibold text-ellipsis overflow-x-hidden whitespace-nowrap">
+                                    <p class="text-ellipsis overflow-x-hidden w-56">BCA</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <hr class="bg-black my-6">
+                    <h4 class="mb-10 font-semibold">Organisasi</h4>
+                    <div class="flex justify-between w-full">
+                        <div>
+                            <table class="">
+                                <tr>
+                                    <td class="pb-4 pr-10 text-gray-400 whitespace-nowrap">Nama Organisasi</td>
+                                    <td class="pb-4 font-semibold  whitespace-nowrap">
+                                        <p class="text-ellipsis overflow-x-hidden w-56">Himpunan Mahasiswa Teknik Sipit
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="pb-4 pr-10 text-gray-400 whitespace-nowrap">No Legalitas</td>
+                                    <td class="pb-4 font-semibold text-ellipsis overflow-x-hidden whitespace-nowrap">
+                                        <p class="text-ellipsis overflow-x-hidden w-56">193BFUWB983Q</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="pb-4 pr-10 text-gray-400 whitespace-nowrap">Akta Pendirian</td>
+                                    <td class="pb-4 font-semibold text-ellipsis overflow-x-hidden whitespace-nowrap">
+                                        <p class="text-ellipsis overflow-x-hidden w-56">4716248987-0658128651-8364283648
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td class="pb-4 pr-10 text-gray-400">Penanggung Jawab</td>
+                                    <td class="pb-4 font-semibold">
+                                        <p class="text-ellipsis overflow-x-hidden w-56">Leo Rosser</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="pb-4 pr-10 text-gray-400">NIK Penanggung Jawab</td>
+                                    <td class="pb-4 font-semibold">
+                                        <p class="text-ellipsis overflow-x-hidden w-56">3202030909090</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </section>
+    <script src="/app.js"></script>
 </body>
+
+</html>
