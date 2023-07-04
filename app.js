@@ -93,10 +93,7 @@ function validateAccount(event) {
 }
 
 // TAB PROFILE
-function openTabs(evt, tabName, tablinks) {
-
-    const btnActive = document.getElementById('tablinks');
-
+function openTabs(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -107,7 +104,13 @@ function openTabs(evt, tabName, tablinks) {
         tablinks[i].className = tablinks[i].className.replace("active", "");
     }
     document.getElementById(tabName).style.display = "block", "";
-    document.getElementById(tablinks).style.backgroundColor = "blue", "";
-    evt.currentTarget.className += "active";
+    evt.currentTarget.className += "active", "";
 
 }
+
+window.addEventListener("load", function () {
+    var defaultTabs = document.getElementsByClassName("defaultTab");
+    for (var i = 0; i < defaultTabs.length; i++) {
+        defaultTabs[i].click();
+    }
+});

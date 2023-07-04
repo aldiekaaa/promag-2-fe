@@ -6,31 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/output.css">
     <script src="https://kit.fontawesome.com/c748089771.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Profil</title>
 
     <style>
-        .tablinks .active {
-            background-color: red;
+        .tablinks.active {
+            background-color: #DCF6FF;
+            border-left-width: 5px;
+            border-color: rgb(37 99 235);
+        }
+
+        .tablinks {
+            border-left-width: 5px;
+            border-color: transparent;
         }
     </style>
 </head>
 
-<body>
+<body class=" w-full">
     <!-- NAVIGATION BAR -->
     <section class="">
-        <div class="z-10 bg-white w-full shadow-2xl border-b-2">
+        <div class="z-10 bg-white w-full shadow-xl border-b-2">
             <div class="container mx-auto">
-                <div class="flex justify-between py-5 bg-white ">
+                <div class="flex justify-between items-center bg-white ">
+                    <!-- LOGO PROFILE -->
                     <div class="border-l-4 border-blue-500">
                         <h5 class="pl-5 text-2xl font-medium text-blue-500">Profile</h5>
                     </div>
-                    <div class="flex gap-16 items-center">
-                        <img class="w-[120px]" src="/src/Sabilulungan.png" alt="">
-                        <button class="text-2xl text-gray-600">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
+                    <!-- PROFILE DROPDOWN -->
+                    <div class="py-4 group">
+                        <div id="profile"
+                            class="flex justify-between relative bg-white shadow-md h-full px-5 py-2 rounded-full items-center duration-300">
+                            <button class="bg-sky-300 w-10 h-10 rounded-full">
+                                <img src="" alt="">
+                                <i class="text-white fa-regular fa-user"></i>
+                            </button>
+                            <div class="pl-4">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <div
+                                    class="hidden absolute top-16 right-1/2 translate-x-1/2  group-hover:block bg-white rounded-lg shadow-xl">
+                                    <ul>
+                                        <li class="py-2"><a class="py-2 px-10 text-gray-500 hover:text-sky-500"
+                                                href="/index.html">Beranda</a></li>
+                                        <li class="py-2"><a class="py-2 px-10 text-gray-500 hover:text-sky-500"
+                                                href="">Setelan</a></li>
+                                        <li class="py-2"><a class="py-2 px-10 text-gray-500 hover:text-sky-500"
+                                                href="/login/index.html">Keluar</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -39,38 +66,33 @@
 
     <!-- MAIN WRAPPER -->
     <section>
-        <div class="flex gap-20 w-full">
+        <div class="flex absolute -z-10 top-0 gap-20 h-screen w-full">
             <!-- SIDEBAR -->
             <div class="bg-white shadow-2xl">
                 <div class="">
-                    <div class="tab mt-5 flex flex-col">
-                        <button class="px-14 py-3 tablinks bg-white active:bg-gray-600 focus:bg-sky-300 focus:border-l-4 border-l-4 border-transparent focus:border-gray-500 hover:bg-sky-300" href=""
-                            onclick="openTabs(event, 'Pengajuan')" id="tablinks">Pengajuan</button>
-                        <button class="px-14 py-3 tablinks bg-white active:bg-gray-600 focus:bg-sky-300 focus:border-l-4 border-l-4 border-transparent focus:border-gray-500 hover:bg-sky-300" href=""
-                            onclick="openTabs(event, 'DataDiri')" id="tablinks">Data Diri</button>
-                        <div class="mt-[450px] xl:pb-[114px] lg:pb-[50px] mx-auto">
-                            <button class="px-10 py-3 text-red-500 rounded-lg mx-auto">
-                                <i class="fa-solid fa-arrow-right-from-bracket mr-3"></i>
-                                Log Out
-                            </button>
-                        </div>
+                    <div class="mt-32 flex flex-col">
+                        <button class="py-3 px-10 bg-white defaultTab tablinks transition-all ease-in-out duration-300"
+                            onclick="openTabs(event, 'Pengajuan')">Pengajuan</button>
+                        <button class="py-3 px-10 bg-white tablinks transition-all ease-in-out duration-300"
+                            onclick="openTabs(event, 'DataDiri')">Data Diri</button>
                     </div>
                 </div>
             </div>
 
             <!-- PENGAJUAN CONTENT -->
-            <div class="hidden w-3/4 h-[550px] mt-10 bg-white shadow-xl rounded-3xl transition-opacity tabcontent"
+            <div class="hidden px-24 py-20 w-4/5 h-[600px] mt-36 bg-white shadow-xl rounded-3xl transition-opacity fadeIn tabcontent"
                 id="Pengajuan">
-                <div class="flex justify-between mt-20 mx-24">
-                    <h2 class="text-3xl font-medium text-blue-500">Pengajuan Saya</h2>
+                <div class="flex justify-between">
+                    <h2 class="text-3xl font-semibold text-blue-500">Pengajuan</h2>
                     <div class="">
                         <a class="border-2 border-blue-500 rounded-full px-5 py-2 text-blue-500 hover:bg-blue-500 hover:border-transparent hover:text-white duration-300"
-                            href=""><i class="fa-solid fa-plus mr-3"></i> Pengajuan Baru</a>
+                            href=""><i class="fa-solid fa-plus mr-3"></i>Pengajuan Baru</a>
                     </div>
                 </div>
-                <div class="mt-14 mx-24">
+                <div class="mt-14 mx-">
                     <!-- DAFTAR PENGAJUAN -->
-                    <ul class="overflow-y-auto h-[300px] scrollbar-hide">
+                    <ul class="overflow-y-auto h-[350px] scrollbar-hide">
+                        <!-- CARD -->
                         <li class="border-b-2 py-5">
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center">
@@ -91,6 +113,7 @@
                                 </div>
                             </div>
                         </li>
+                        <!-- CARD -->
                         <li class="border-b-2 py-5">
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center">
@@ -111,6 +134,7 @@
                                 </div>
                             </div>
                         </li>
+                        <!-- CARD -->
                         <li class="border-b-2 py-5">
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center">
@@ -131,6 +155,7 @@
                                 </div>
                             </div>
                         </li>
+                        <!-- CARD -->
                         <li class="border-b-2 py-5">
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center">
@@ -156,17 +181,17 @@
             </div>
 
             <!-- DATA DIRI CONTENT -->
-            <div class="hidden px-24 py-20 w-3/4 h-[600px] mt-10 bg-white shadow-xl rounded-3xl transition-opacity fadeIn tabcontent"
+            <div class="hidden px-24 py-20 w-4/5 h-[600px] mt-36 bg-white shadow-xl rounded-3xl transition-opacity fadeIn tabcontent"
                 id="DataDiri">
                 <div class="">
                     <h2 class="text-3xl font-semibold text-blue-500">Data Diri</h2>
                 </div>
-                <div class="overflow-y-auto h-[95%]">
+                <div class="overflow-y-auto mt-10 h-[90%]">
                     <div class="flex justify-center gap-12 items-center m-16">
                         <img class="h-48 w-48 object-cover rounded-full" src="/src/Slide.png" alt="">
                         <div>
                             <p class="mb-4 text-gray-400">Nama</p>
-                            <p class="mb-4 font-semibold">Asep</p>
+                            <p class="mb-4 font-semibold">Lydia Carter</p>
                             <p class="mb-4 text-gray-400">Email</p>
                             <p class="mb-4 font-semibold">Lydia@email.com</p>
                         </div>
@@ -265,7 +290,28 @@
                 </div>
             </div>
     </section>
-    <script src="/app.js"></script>
+    <script>
+        function openTabs(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+
+        window.addEventListener("load", function () {
+            var defaultTabs = document.getElementsByClassName("defaultTab");
+            for (var i = 0; i < defaultTabs.length; i++) {
+                defaultTabs[i].click();
+            }
+        });
+    </script>
 </body>
 
 </html>

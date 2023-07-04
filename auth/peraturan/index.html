@@ -9,7 +9,7 @@
     <link href="/dist/output.css" rel="stylesheet">
     <script src="/dist/app.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Pengumuman</title>
+    <title>Peraturan</title>
     <style>
         /* The dots/bullets/indicators */
         .dot {
@@ -81,7 +81,7 @@
                 position: fixed;
                 z-index: 50;
                 backdrop-filter: blur(4px);
-                
+
             }
 
             .hamburger-costum {
@@ -146,11 +146,11 @@
                             </li>
                             <li class="group">
                                 <a href="/peraturan/index.html"
-                                    class="mx-4 flex py-3 text-xl text-gray-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Peraturan</a>
+                                    class="mx-4 flex py-3 text-xl text-blue-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Peraturan</a>
                             </li>
                             <li class="group">
                                 <a href="/pengumuman/index.html"
-                                    class="mx-4 flex py-3 text-xl text-blue-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Pengumuman</a>
+                                    class="mx-4 flex py-3 text-xl text-gray-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Pengumuman</a>
                             </li>
                         </ul>
                     </nav>
@@ -166,33 +166,99 @@
         </div>
     </header>
 
-    <section>
-        <div class="mt-32">
-            <div class="text-center">
-                <h3 class="text-3xl text-blue-500 font-semibold mb-5">Nantikan Pemberitahuan Terbaru</h3>
-                <button class="px-10 py-2 border-2 border-sky-500 text-sky-500 rounded-full">Download Template
-                    Pengajuan</button>
-            </div>
-            <div class="bg-white rounded-[50px] w-[80%] h-[455px] mx-auto mt-10 px-16 py-16">
-                <span>Untuk Informasi Lebih Lanjut</span>
-                <h5 class="font-semibold text-4xl mb-14">Ikuti Sosial Media Kami</h5>
-                <div class="text-center flex justify-between">
+    <!-- MAIN WRAPPER -->
+    <section class="mt-28">
+        <div class="relative -z-20 h-[100rem]">
+            <img class="absolute top-0 -z-10" src="../src/Header(2).png" alt="">
+            <h1
+                class="absolute translate-y-[100px] text-white font-bold text-4xl tracking-wider translate-x-1/2 right-1/2">
+                Peraturan</h1>
+        </div>
+    </section>
+
+    <section class="">
+        <div class="absolute top-[350px] -translate-x-1/2 left-1/2 container">
+            <div class="w-[85%] mx-auto bg-white rounded-[50px] py-10 px-32">
+                <div class="flex justify-between mb-10">
+                    <!-- KATEGORI BUTTON -->
                     <div>
-                        <a class="px-10 py-2 border-2 border-gray-500 rounded-full" href=""><i
-                                class="fa-brands fa-instagram mr-5"></i>@diskominfokab.sukabumi</a><br>
-                        <p class="my-8">dan</p>
-                        <a class="px-10 py-2 border-2 border-gray-500 rounded-full" href=""><i
-                                class="fa-brands fa-facebook mr-5"></i>@diskominfokab.sukabumi</a><br>
+                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
+                            class="text-gray-500 bg-transparent border-2 border-gray-500 focus:outline-none font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
+                            type="button">Kategori <svg class="w-4 h-4 ml-10" aria-hidden="true" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7">
+                                </path>
+                            </svg></button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdown"
+                            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
+                            <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownDefaultButton">
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Earnings</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sign
+                                        out</a>
+                                </li>
+                            </ul>
+                        </div>
+
                     </div>
-                    <div>
-                        <img src="/src/Folow.png" alt="">
+                    <!-- SEARCH BAR -->
+                    <div class="relative w-[240px]">
+                        <input class="rounded-full h-10 w-[240px] border-2 border-gray-500" type="text"
+                            placeholder="Cari">
+                        <i class="absolute right-6 top-1/2 -translate-y-1/2 fa-solid fa-magnifying-glass"></i>
                     </div>
                 </div>
-            </div>
-            <div class="text-center pt-20">
-                <h3 class="text-3xl text-blue-500 font-semibold mb-5">Pelajari Panduan Pengajuan Bantuan</h3>
-                <button class="px-10 py-2 border-2 border-sky-500 text-sky-500 rounded-full">Panduan Pengajuan Hibah
-                    </button>
+                <div class="w-full border-2 border-sky-300 py-5 px-10 rounded-[25px] mb-5">
+                    <h2 class="text-gray-500">Permendagri</h2>
+                    <h5 class="uppercase font-bold my-5">Permendagri 32 tahun 2011</h5>
+                    <p class="text-sm">Hibah berupa uang dianggarkan dalam kelompok belanja tidak langsung, jenis
+                        belanja hibah, obyek, dan rincian obyek belanja berkenaan pada PPKD</p>
+                </div>
+                <div class="w-full border-2 border-sky-300 py-5 px-10 rounded-[25px] mb-5">
+                    <h2 class="text-gray-500">Permendagri</h2>
+                    <h5 class="uppercase font-bold my-5">PERMENDAGRI 39 TAHUN 2012 PERUBAHAN ATAS PERATURAN MENTERI
+                        DALAM NEGERI NOMOR 32 TAHUN 2011</h5>
+                    <p class="text-sm">Realisasi bantuan sosial berupa barang dikonversikan sesuai standar akuntansi
+                        pemerintahan pada laporan realisasi anggaran dan diungkapkan pada catatan atas laporan keuangan
+                        dalam penyusunan laporan keuangan pemerintah daerah.</p>
+                </div>
+                <div class="w-full border-2 border-sky-300 py-5 px-10 rounded-[25px] mb-5">
+                    <h2 class="text-gray-500">Permendagri</h2>
+                    <h5 class="uppercase font-bold my-5">Permendagri 32 tahun 2011</h5>
+                    <p class="text-sm">Hibah berupa uang dianggarkan dalam kelompok belanja tidak langsung, jenis
+                        belanja hibah, obyek, dan rincian obyek belanja berkenaan pada PPKD</p>
+                </div>
+                <div class="w-full border-2 border-sky-300 py-5 px-10 rounded-[25px] mb-5">
+                    <h2 class="text-gray-500">Permendagri</h2>
+                    <h5 class="uppercase font-bold my-5">Permendagri 32 tahun 2011</h5>
+                    <p class="text-sm">Hibah berupa uang dianggarkan dalam kelompok belanja tidak langsung, jenis
+                        belanja hibah, obyek, dan rincian obyek belanja berkenaan pada PPKD</p>
+                </div>
+                <div class="w-full border-2 border-sky-300 py-5 px-10 rounded-[25px] mb-5">
+                    <h2 class="text-gray-500">Permendagri</h2>
+                    <h5 class="uppercase font-bold my-5">Permendagri 32 tahun 2011</h5>
+                    <p class="text-sm">Hibah berupa uang dianggarkan dalam kelompok belanja tidak langsung, jenis
+                        belanja hibah, obyek, dan rincian obyek belanja berkenaan pada PPKD</p>
+                </div>
+                <!-- PAGINATION BUTTON -->
+                <div class="flex justify-center mt-20">
+                    <a class="bg-blue-500 hover:bg-blue-800 duration-300 py-3 px-12 rounded-xl text-white"
+                        href="">Selanjutnya</a>
+                </div>
+                <!-- PAGINATION STAT -->
+                <div class="flex justify-center">
+                    <span><span class="font-bold">1</span> dari 6 Halaman</span>
+                </div>
             </div>
         </div>
     </section>
@@ -273,7 +339,6 @@
             </div>
         </div>
     </footer>
-    
     <script>
         // Navbar Scroll
         window.onscroll = function () {
@@ -297,5 +362,6 @@
     });
 </script>
 </body>
+
 
 </html>
