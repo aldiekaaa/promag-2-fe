@@ -110,68 +110,55 @@
 
 <body class="">
     <!-- NAVIGATION BAR -->
-    <header class="w-full pt-2 scrol fixed top-0 left-0 flex items-center z-50 border-b-[1px] border-white">
-        <div class="w-full container">
-            <div class="w-full flex items-center relative">
-                <!-- Logo -->
-                <div class="w-[200px] pl-6 pr-10 py-4 mb-2 lg:w-[450px] lg:px-20">
-                    <a href="#home" class="block">
-                        <img src="/src/Diskominfosan.png" alt="Logo" />
-                    </a>
-                </div>
-
-                <div class="lg:w-full flex items-center gap-2 px-2 mb-2">
-                    <!-- Hamburger Navigasi -->
-                    <button id="hamburger" name="hamburger" type="button" class="block  right-4 lg:hidden">
-                        <span class="hamburger-costum transition duration-300 ease-in-out origin-top-right"></span>
-                        <span class="hamburger-costum transition duration-300 ease-in-out"></span>
-                        <span class="hamburger-costum transition duration-300 ease-in-out origin-bottom-right"></span>
-                    </button>
-
-                    <!-- Navigasi -->
-                    <nav id="navbar"
-                        class="hidden w-full absolute py-4 bg-sky-400 shadow-lg rounded-lg top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:mt-2">
-                        <ul class="block lg:flex gap-10 lg:justify-center">
-                            <li class="group">
-                                <a href="#"
-                                    class="mx-4 flex py-3 text-xl text-gray-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Beranda</a>
-                            </li>
-                            <li class="group">
-                                <a href="/program/index.html"
-                                    class="mx-4 flex py-3 text-xl lg:font-semibold text-blue-500 lg:text-base duration-300">Program</a>
-                            </li>
-                            <li class="group">
-                                <a href="/laporan/index.html"
-                                    class="mx-4 flex py-3 text-xl text-gray-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Laporan</a>
-                            </li>
-                            <li class="group">
-                                <a href="/peraturan/index.html"
-                                    class="mx-4 flex py-3 text-xl text-gray-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Peraturan</a>
-                            </li>
-                            <li class="group">
-                                <a href="/pengumuman/index.html"
-                                    class="mx-4 flex py-3 text-xl text-gray-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Pengumuman</a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <!-- Profile -->
-                    <div id="profile" class="hidden lg:block text-gray-500 hover:text-blue-500 duration-300">
-                        <a href="" class="flex items-center">
-                            <i class="fa-regular fa-user"></i>
-                        </a>
-                    </div>
+    <header class="fixed z-50 w-full">
+        <nav
+            class="flex flex-wrap items-center justify-between bg-white shadow-lg text-white py-5 px-5 md:px-10 z-10 motion-safe:fade-In">
+            <div class="flex flex-no-shrink items-center py-4 text-grey-darkest">
+                <a class="w-36 sm:w-40 md:w-60 lg:w-[200px] drop-shadow-sm" href="#"><img src="/src/Diskominfosan.png" alt=""></a>
+                <div class="font-poppins md:ml-5 ml-2 text-blue-500">
                 </div>
             </div>
-        </div>
+
+            <input class="menu-btn hidden" type="checkbox" id="menu-btn">
+                <label class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" for="menu-btn">
+                    <span class="navicon bg-gray-500 flex items-center relative"></span>
+                </label>
+
+            <ul
+                class="menu md:border-none flex w-full md:w-auto font-poppins gap-10 text-blue-500">
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="#"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Beranda</a>
+                </li>
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="/program/index.html"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Program</a>
+                </li>
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="/laporan/index.html"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Laporan</a>
+                </li>
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="/peraturan/index.html"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Peraturan</a>
+                </li>
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="/pengumuman/index.html"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Pengumuman</a>
+                </li>
+            </ul>
+            <a class="text-gray-500 hidden md:block" href="">
+                <i class="fa-regular fa-user"></i>
+            </a>
+        </nav>
     </header>
 
     <!-- MAIN SECTION -->
     <section class="h-[590px] bg-gray-200">
-        <div class="mt-28 pt-14 flex justify-between items-center">
-            <div class="bg-white rounded-e-[50px] w-[58%] shadow-xl px-14 py-14">
+        <div class="pt-36 pb-10 flex justify-center md:justify-between items-center">
+            <div class="bg-white rounded-e-[50px] rounded-s-[50px] md:rounded-s-none w-[400px] md:w-[58%] shadow-xl px-14 py-14">
                 <h1 class="text-yellow-500 font-semibold">Diskominfosan Kab. Sukabumi</h1>
-                <h3 class="text-blue-500 text-3xl font-bold my-3">Ajukan Bansos Online untuk Mempercepat dan Memudahkan
+                <h3 class="text-blue-500 text-xl md:text-3xl font-bold my-3">Ajukan Bansos Online untuk Mempercepat dan Memudahkan
                     Proses Pengajuan</h3>
                 <p class="mb-16 text-gray-600">Memanfaatkan layanan pengajuan bansos secara online melalui website akan
                     mempermudah proses pengajuan dan mempercepat akses ke bantuan sosial yang diperlukan.</p>
@@ -179,7 +166,7 @@
                     class="mt-10 bg-blue-500 hover:bg-blue-800 duration-300 px-20 py-3 text-white rounded-2xl">Ajukan</a>
             </div>
             <div>
-                <img class="mr-10" src="/src/docs.png" alt="">
+                <img class="mr-10 hidden md:block" src="/src/docs.png" alt="">
             </div>
         </div>
     </section>
@@ -225,334 +212,340 @@
                     <i class="absolute right-6 top-1/2 -translate-y-1/2 fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
-            <!-- DAFTAR HIBAH LIST -->
-            <div class="grid grid-cols-3 gap-20 grid-rows-3 mt-20 w-full">
-                <!-- GRID -->
-                <div class="w-[400px]">
-                    <div class="flex gap-7">
-                        <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
-                        <div>
-                            <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
-                            <a href="">
-                                <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
-                            </a>
-                            <p class="text-xs mt-3">Alfredo Rosser</p>
+            <section>
+                <div class="container mx-auto pt-16">
+                    <div class="flex justify-between items-center">
+                    </div>
+                    <!-- DAFTAR HIBAH LIST -->
+                    <div class="grid lg:grid-cols-3 lg:grid-rows-3 md:grid-cols-2 md:grid-rows-2 gap-20 mt-20 w-full">
+                        <!-- GRID -->
+                        <div class="w-[400px]">
+                            <div class="flex gap-7">
+                                <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
+                                <div>
+                                    <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
+                                    <a href="">
+                                        <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
+                                    </a>
+                                    <p class="text-xs mt-3">Alfredo Rosser</p>
+                                </div>
+                            </div>
+                            <div class="mt-5 flex gap-10">
+                                <ul class="text-sm ">
+                                    <li class="mb-2">
+                                        Tahapan
+                                    </li>
+                                    <li class="mb-2">
+                                        Kategori
+                                    </li>
+                                    <li class="mb-2">
+                                        Nilai
+                                    </li>
+                                </ul>
+                                <ul class="text-sm ">
+                                    <li class="mb-2 text-blue-500">
+                                        Disetujui
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Bantuan Sosial
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Rp 70.000.000,-
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-[400px]">
+                            <div class="flex gap-7">
+                                <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
+                                <div>
+                                    <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
+                                    <a href="">
+                                        <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
+                                    </a>
+                                    <p class="text-xs mt-3">Alfredo Rosser</p>
+                                </div>
+                            </div>
+                            <div class="mt-5 flex gap-10">
+                                <ul class="text-sm ">
+                                    <li class="mb-2">
+                                        Tahapan
+                                    </li>
+                                    <li class="mb-2">
+                                        Kategori
+                                    </li>
+                                    <li class="mb-2">
+                                        Nilai
+                                    </li>
+                                </ul>
+                                <ul class="text-sm ">
+                                    <li class="mb-2 text-blue-500">
+                                        Disetujui
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Bantuan Sosial
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Rp 70.000.000,-
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-[400px]">
+                            <div class="flex gap-7">
+                                <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
+                                <div>
+                                    <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
+                                    <a href="">
+                                        <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
+                                    </a>
+                                    <p class="text-xs mt-3">Alfredo Rosser</p>
+                                </div>
+                            </div>
+                            <div class="mt-5 flex gap-10">
+                                <ul class="text-sm ">
+                                    <li class="mb-2">
+                                        Tahapan
+                                    </li>
+                                    <li class="mb-2">
+                                        Kategori
+                                    </li>
+                                    <li class="mb-2">
+                                        Nilai
+                                    </li>
+                                </ul>
+                                <ul class="text-sm ">
+                                    <li class="mb-2 text-blue-500">
+                                        Disetujui
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Bantuan Sosial
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Rp 70.000.000,-
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-[400px]">
+                            <div class="flex gap-7">
+                                <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
+                                <div>
+                                    <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
+                                    <a href="">
+                                        <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
+                                    </a>
+                                    <p class="text-xs mt-3">Alfredo Rosser</p>
+                                </div>
+                            </div>
+                            <div class="mt-5 flex gap-10">
+                                <ul class="text-sm ">
+                                    <li class="mb-2">
+                                        Tahapan
+                                    </li>
+                                    <li class="mb-2">
+                                        Kategori
+                                    </li>
+                                    <li class="mb-2">
+                                        Nilai
+                                    </li>
+                                </ul>
+                                <ul class="text-sm ">
+                                    <li class="mb-2 text-blue-500">
+                                        Disetujui
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Bantuan Sosial
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Rp 70.000.000,-
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-[400px]">
+                            <div class="flex gap-7">
+                                <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
+                                <div>
+                                    <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
+                                    <a href="">
+                                        <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
+                                    </a>
+                                    <p class="text-xs mt-3">Alfredo Rosser</p>
+                                </div>
+                            </div>
+                            <div class="mt-5 flex gap-10">
+                                <ul class="text-sm ">
+                                    <li class="mb-2">
+                                        Tahapan
+                                    </li>
+                                    <li class="mb-2">
+                                        Kategori
+                                    </li>
+                                    <li class="mb-2">
+                                        Nilai
+                                    </li>
+                                </ul>
+                                <ul class="text-sm ">
+                                    <li class="mb-2 text-blue-500">
+                                        Disetujui
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Bantuan Sosial
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Rp 70.000.000,-
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-[400px]">
+                            <div class="flex gap-7">
+                                <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
+                                <div>
+                                    <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
+                                    <a href="">
+                                        <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
+                                    </a>
+                                    <p class="text-xs mt-3">Alfredo Rosser</p>
+                                </div>
+                            </div>
+                            <div class="mt-5 flex gap-10">
+                                <ul class="text-sm ">
+                                    <li class="mb-2">
+                                        Tahapan
+                                    </li>
+                                    <li class="mb-2">
+                                        Kategori
+                                    </li>
+                                    <li class="mb-2">
+                                        Nilai
+                                    </li>
+                                </ul>
+                                <ul class="text-sm ">
+                                    <li class="mb-2 text-blue-500">
+                                        Disetujui
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Bantuan Sosial
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Rp 70.000.000,-
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-[400px]">
+                            <div class="flex gap-7">
+                                <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
+                                <div>
+                                    <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
+                                    <a href="">
+                                        <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
+                                    </a>
+                                    <p class="text-xs mt-3">Alfredo Rosser</p>
+                                </div>
+                            </div>
+                            <div class="mt-5 flex gap-10">
+                                <ul class="text-sm ">
+                                    <li class="mb-2">
+                                        Tahapan
+                                    </li>
+                                    <li class="mb-2">
+                                        Kategori
+                                    </li>
+                                    <li class="mb-2">
+                                        Nilai
+                                    </li>
+                                </ul>
+                                <ul class="text-sm ">
+                                    <li class="mb-2 text-blue-500">
+                                        Disetujui
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Bantuan Sosial
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Rp 70.000.000,-
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-[400px]">
+                            <div class="flex gap-7">
+                                <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
+                                <div>
+                                    <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
+                                    <a href="">
+                                        <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
+                                    </a>
+                                    <p class="text-xs mt-3">Alfredo Rosser</p>
+                                </div>
+                            </div>
+                            <div class="mt-5 flex gap-10">
+                                <ul class="text-sm ">
+                                    <li class="mb-2">
+                                        Tahapan
+                                    </li>
+                                    <li class="mb-2">
+                                        Kategori
+                                    </li>
+                                    <li class="mb-2">
+                                        Nilai
+                                    </li>
+                                </ul>
+                                <ul class="text-sm ">
+                                    <li class="mb-2 text-blue-500">
+                                        Disetujui
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Bantuan Sosial
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Rp 70.000.000,-
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-[400px]">
+                            <div class="flex gap-7">
+                                <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
+                                <div>
+                                    <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
+                                    <a href="">
+                                        <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
+                                    </a>
+                                    <p class="text-xs mt-3">Alfredo Rosser</p>
+                                </div>
+                            </div>
+                            <div class="mt-5 flex gap-10">
+                                <ul class="text-sm ">
+                                    <li class="mb-2">
+                                        Tahapan
+                                    </li>
+                                    <li class="mb-2">
+                                        Kategori
+                                    </li>
+                                    <li class="mb-2">
+                                        Nilai
+                                    </li>
+                                </ul>
+                                <ul class="text-sm ">
+                                    <li class="mb-2 text-blue-500">
+                                        Disetujui
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Bantuan Sosial
+                                    </li>
+                                    <li class="mb-2 text-gray-400">
+                                        Rp 70.000.000,-
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="mt-5 flex gap-10">
-                        <ul class="text-sm ">
-                            <li class="mb-2">
-                                Tahapan
-                            </li>
-                            <li class="mb-2">
-                                Kategori
-                            </li>
-                            <li class="mb-2">
-                                Nilai
-                            </li>
-                        </ul>
-                        <ul class="text-sm ">
-                            <li class="mb-2 text-blue-500">
-                                Disetujui
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Bantuan Sosial
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Rp 70.000.000,-
-                            </li>
-                        </ul>
-                    </div>
                 </div>
-                <div class="w-[400px]">
-                    <div class="flex gap-7">
-                        <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
-                        <div>
-                            <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
-                            <a href="">
-                                <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
-                            </a>
-                            <p class="text-xs mt-3">Alfredo Rosser</p>
-                        </div>
-                    </div>
-                    <div class="mt-5 flex gap-10">
-                        <ul class="text-sm ">
-                            <li class="mb-2">
-                                Tahapan
-                            </li>
-                            <li class="mb-2">
-                                Kategori
-                            </li>
-                            <li class="mb-2">
-                                Nilai
-                            </li>
-                        </ul>
-                        <ul class="text-sm ">
-                            <li class="mb-2 text-blue-500">
-                                Disetujui
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Bantuan Sosial
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Rp 70.000.000,-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-[400px]">
-                    <div class="flex gap-7">
-                        <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
-                        <div>
-                            <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
-                            <a href="">
-                                <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
-                            </a>
-                            <p class="text-xs mt-3">Alfredo Rosser</p>
-                        </div>
-                    </div>
-                    <div class="mt-5 flex gap-10">
-                        <ul class="text-sm ">
-                            <li class="mb-2">
-                                Tahapan
-                            </li>
-                            <li class="mb-2">
-                                Kategori
-                            </li>
-                            <li class="mb-2">
-                                Nilai
-                            </li>
-                        </ul>
-                        <ul class="text-sm ">
-                            <li class="mb-2 text-blue-500">
-                                Disetujui
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Bantuan Sosial
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Rp 70.000.000,-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-[400px]">
-                    <div class="flex gap-7">
-                        <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
-                        <div>
-                            <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
-                            <a href="">
-                                <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
-                            </a>
-                            <p class="text-xs mt-3">Alfredo Rosser</p>
-                        </div>
-                    </div>
-                    <div class="mt-5 flex gap-10">
-                        <ul class="text-sm ">
-                            <li class="mb-2">
-                                Tahapan
-                            </li>
-                            <li class="mb-2">
-                                Kategori
-                            </li>
-                            <li class="mb-2">
-                                Nilai
-                            </li>
-                        </ul>
-                        <ul class="text-sm ">
-                            <li class="mb-2 text-blue-500">
-                                Disetujui
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Bantuan Sosial
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Rp 70.000.000,-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-[400px]">
-                    <div class="flex gap-7">
-                        <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
-                        <div>
-                            <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
-                            <a href="">
-                                <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
-                            </a>
-                            <p class="text-xs mt-3">Alfredo Rosser</p>
-                        </div>
-                    </div>
-                    <div class="mt-5 flex gap-10">
-                        <ul class="text-sm ">
-                            <li class="mb-2">
-                                Tahapan
-                            </li>
-                            <li class="mb-2">
-                                Kategori
-                            </li>
-                            <li class="mb-2">
-                                Nilai
-                            </li>
-                        </ul>
-                        <ul class="text-sm ">
-                            <li class="mb-2 text-blue-500">
-                                Disetujui
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Bantuan Sosial
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Rp 70.000.000,-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-[400px]">
-                    <div class="flex gap-7">
-                        <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
-                        <div>
-                            <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
-                            <a href="">
-                                <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
-                            </a>
-                            <p class="text-xs mt-3">Alfredo Rosser</p>
-                        </div>
-                    </div>
-                    <div class="mt-5 flex gap-10">
-                        <ul class="text-sm ">
-                            <li class="mb-2">
-                                Tahapan
-                            </li>
-                            <li class="mb-2">
-                                Kategori
-                            </li>
-                            <li class="mb-2">
-                                Nilai
-                            </li>
-                        </ul>
-                        <ul class="text-sm ">
-                            <li class="mb-2 text-blue-500">
-                                Disetujui
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Bantuan Sosial
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Rp 70.000.000,-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-[400px]">
-                    <div class="flex gap-7">
-                        <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
-                        <div>
-                            <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
-                            <a href="">
-                                <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
-                            </a>
-                            <p class="text-xs mt-3">Alfredo Rosser</p>
-                        </div>
-                    </div>
-                    <div class="mt-5 flex gap-10">
-                        <ul class="text-sm ">
-                            <li class="mb-2">
-                                Tahapan
-                            </li>
-                            <li class="mb-2">
-                                Kategori
-                            </li>
-                            <li class="mb-2">
-                                Nilai
-                            </li>
-                        </ul>
-                        <ul class="text-sm ">
-                            <li class="mb-2 text-blue-500">
-                                Disetujui
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Bantuan Sosial
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Rp 70.000.000,-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-[400px]">
-                    <div class="flex gap-7">
-                        <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
-                        <div>
-                            <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
-                            <a href="">
-                                <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
-                            </a>
-                            <p class="text-xs mt-3">Alfredo Rosser</p>
-                        </div>
-                    </div>
-                    <div class="mt-5 flex gap-10">
-                        <ul class="text-sm ">
-                            <li class="mb-2">
-                                Tahapan
-                            </li>
-                            <li class="mb-2">
-                                Kategori
-                            </li>
-                            <li class="mb-2">
-                                Nilai
-                            </li>
-                        </ul>
-                        <ul class="text-sm ">
-                            <li class="mb-2 text-blue-500">
-                                Disetujui
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Bantuan Sosial
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Rp 70.000.000,-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-[400px]">
-                    <div class="flex gap-7">
-                        <img class="object-cover w-[100px] h-[100px] rounded-2xl" src="/src/Slide.png" alt="">
-                        <div>
-                            <p class="text-sm text-gray-400" id="tanggal">21 Mei 2023</p>
-                            <a href="">
-                                <h2 class="text-lg font-medium mt-2" id="judul">Perbaikan Jembatan Ambruk Cikreteg
-                            </a>
-                            <p class="text-xs mt-3">Alfredo Rosser</p>
-                        </div>
-                    </div>
-                    <div class="mt-5 flex gap-10">
-                        <ul class="text-sm ">
-                            <li class="mb-2">
-                                Tahapan
-                            </li>
-                            <li class="mb-2">
-                                Kategori
-                            </li>
-                            <li class="mb-2">
-                                Nilai
-                            </li>
-                        </ul>
-                        <ul class="text-sm ">
-                            <li class="mb-2 text-blue-500">
-                                Disetujui
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Bantuan Sosial
-                            </li>
-                            <li class="mb-2 text-gray-400">
-                                Rp 70.000.000,-
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            </section>
             <!-- PAGINATION BUTTON -->
             <div class="flex justify-center mt-20">
                 <a class="bg-blue-500 hover:bg-blue-800 duration-300 py-3 px-12 rounded-xl text-white"

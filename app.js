@@ -20,26 +20,7 @@ function showSlides() {
     setTimeout(showSlides, 5000);
 }
 
-// Navbar Scroll
-window.onscroll = function () {
-    const header = document.querySelector('header');
-    const navbarScroll = header.offsetTop;
 
-    if (window.pageYOffset > navbarScroll) {
-        header.classList.add('navbar-scroll');
-    } else {
-        header.classList.remove('navbar-scroll');
-    }
-}
-
-// JavaScript Hamburger
-const hamburger = document.querySelector('#hamburger');
-const navbar = document.querySelector('#navbar');
-
-hamburger.addEventListener('click', function () {
-    hamburger.classList.toggle('hamburger-click');
-    navbar.classList.toggle('hidden');
-});
 
 // PASSWORD VISIBILITY
 function togglePasswordVisibility() {
@@ -113,4 +94,13 @@ window.addEventListener("load", function () {
     for (var i = 0; i < defaultTabs.length; i++) {
         defaultTabs[i].click();
     }
+});
+
+// nav
+const button = document.querySelector('#menu-button');
+const menu = document.querySelector('#menu');
+
+
+button.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
 });

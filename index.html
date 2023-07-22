@@ -94,34 +94,54 @@
 
         }
 
-        @layer utilities {
-            .navbar-scroll {
-                @apply shadow-lg;
-                position: fixed;
-                z-index: 50;
-                backdrop-filter: blur(4px);
-                
+        @media (max-width: 767px) {
+            .navicon {
+                width: 1.125em;
+                height: .125em;
             }
 
-            .hamburger-costum {
-                width: 30px;
-                height: 2px;
-                margin-top: 8px;
-                margin-bottom: 8px;
+            .navicon::before,
+            .navicon::after {
                 display: block;
-                background-color: black
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                transition: all .2s ease-out;
+                content: '';
+                background: rgb(52, 52, 52);
             }
 
-            .hamburger-click>span:nth-child(1) {
-                @apply -rotate-45;
+            .navicon::before {
+                top: 5px;
             }
 
-            .hamburger-click>span:nth-child(2) {
-                @apply scale-0;
+            .navicon::after {
+                top: -5px;
             }
 
-            .hamburger-click>span:nth-child(3) {
-                @apply rotate-45;
+            .menu-btn:not(:checked)~.menu {
+                display: none;
+            }
+
+            .menu-btn:checked~.menu {
+                display: block;
+            }
+
+            .menu-btn:checked~.menu-icon .navicon {
+                background: transparent;
+            }
+
+            .menu-btn:checked~.menu-icon .navicon::before {
+                transform: rotate(-45deg);
+            }
+
+            .menu-btn:checked~.menu-icon .navicon::after {
+                transform: rotate(45deg);
+            }
+
+            .menu-btn:checked~.menu-icon .navicon::before,
+            .menu-btn:checked~.menu-icon .navicon::after {
+                top: 0;
             }
         }
     </style>
@@ -129,72 +149,63 @@
 
 <body class="">
     <!-- NAVIGATION BAR -->
-    <header class="w-full pt-2 scrol fixed top-0 left-0 flex items-center z-50 border-b-[1px] border-white">
-        <div class="w-full container">
-            <div class="w-full flex justify-between items-center relative">
-                <!-- Logo -->
-                <div class="w-[200px] pl-6 pr-10 py-4 mb-2 lg:w-[450px] lg:px-20">
-                    <a href="#home" class="block">
-                        <img src="/src/Diskominfosan.png" alt="Logo" />
-                    </a>
-                </div>
-
-                <div class="lg:w-full flex items-center gap-2 px-2 mb-2">
-                    <!-- Hamburger Navigasi -->
-                    <button id="hamburger" name="hamburger" type="button" class="block lg:hidden">
-                        <span class="hamburger-costum transition duration-300 ease-in-out origin-top-right"></span>
-                        <span class="hamburger-costum transition duration-300 ease-in-out"></span>
-                        <span class="hamburger-costum transition duration-300 ease-in-out origin-bottom-right"></span>
-                    </button>
-
-                    <!-- Navigasi -->
-                    <nav id="navbar"
-                        class="hidden w-full absolute py-4 bg-sky-400 shadow-lg rounded-lg top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:mt-2">
-                        <ul class="block lg:flex gap-10 lg:justify-center">
-                            <li class="group">
-                                <a href="#"
-                                    class="mx-4 flex py-3 text-xl text-blue-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Beranda</a>
-                            </li>
-                            <li class="group">
-                                <a href="/program/index.html"
-                                    class="mx-4 flex py-3 text-xl text-gray-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Program</a>
-                            </li>
-                            <li class="group">
-                                <a href="/laporan/index.html"
-                                    class="mx-4 flex py-3 text-xl text-gray-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Laporan</a>
-                            </li>
-                            <li class="group">
-                                <a href="/peraturan/index.html"
-                                    class="mx-4 flex py-3 text-xl text-gray-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Peraturan</a>
-                            </li>
-                            <li class="group">
-                                <a href="/pengumuman/index.html"
-                                    class="mx-4 flex py-3 text-xl text-gray-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Pengumuman</a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <!-- Profile -->
-                    <div id="profile" class="hidden lg:block text-gray-500 hover:text-blue-500 duration-300">
-                        <a href="" class="flex items-center">
-                            <i class="fa-regular fa-user"></i>
-                        </a>
-                    </div>
+    <header class="fixed z-50 w-full">
+        <nav
+            class="flex flex-wrap items-center justify-between bg-white shadow-lg text-white py-5 px-5 md:px-10 z-10 motion-safe:fade-In">
+            <div class="flex flex-no-shrink items-center py-4 text-grey-darkest">
+                <a class="w-36 sm:w-40 md:w-60 lg:w-[200px] drop-shadow-sm" href="#"><img src="/src/Diskominfosan.png" alt=""></a>
+                <div class="font-poppins md:ml-5 ml-2 text-blue-500">
                 </div>
             </div>
-        </div>
+
+            <input class="menu-btn hidden" type="checkbox" id="menu-btn">
+                <label class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" for="menu-btn">
+                    <span class="navicon bg-gray-500 flex items-center relative"></span>
+                </label>
+
+            <ul
+                class="menu md:border-none flex w-full md:w-auto font-poppins gap-10 text-blue-500">
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="#"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Beranda</a>
+                </li>
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="/program/index.html"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Program</a>
+                </li>
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="/laporan/index.html"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Laporan</a>
+                </li>
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="/peraturan/index.html"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Peraturan</a>
+                </li>
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="/pengumuman/index.html"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Pengumuman</a>
+                </li>
+            </ul>
+            <a class="text-gray-500 hidden md:block" href="">
+                <i class="fa-regular fa-user"></i>
+            </a>
+        </nav>
     </header>
 
     <!-- MAIN SECTION -->
-    <section>
-        <div class="slideshow-container relative w-full h-[300px] lg:h-[600px] mt-28">
+    <section class="pt-24">
+        <div class="slideshow-container relative w-full h-[300px] lg:h-[600px]">
             <div class="mySlides relative w-full fade">
-                <img class="object-cover h-[300px] lg:h-[600px] brightness-50 w-full" src="/src/slider.png" style="width:100%">
+                <img class="object-cover h-[300px] lg:h-[600px] brightness-50 w-full" src="/src/slider.png"
+                    style="width:100%">
                 <div class="absolute top-1/4 lg:top-1/2 right-1/2 translate-x-1/2 text-center w-[300px] lg:w-[600px] ">
                     <h1 class="text-yellow-400 lg:text-lg text-base">Pemerintah Kab. Sukabumi</h1>
                     <h5 class="text-white text-xl lg:text-3xl font-bold">Bantuan Sosial Untuk Semua</h5>
-                    <p class="text-white text-xs md:text-base">Kami berkomitmen untuk menyalurkan bantuan dengan tepat sasaran dan membantu
-                        meningkatkan kualitas hidup masyarakat. Dukung program penyaluran hibah kami dan berikan dampak
+                    <p class="text-white text-xs md:text-base">Kami berkomitmen untuk menyalurkan bantuan dengan
+                        tepat
+                        sasaran dan membantu
+                        meningkatkan kualitas hidup masyarakat. Dukung program penyaluran hibah kami dan berikan
+                        dampak
                         positif bagi sesama.</p>
                 </div>
 
@@ -225,15 +236,17 @@
     <!-- CALL TO ACTION -->
     <section>
         <div class="relative container mx-auto">
-            <div class="md:flex flex-col md:flex-row gap-20 items-center">
-                <div class="md:w-[300px] lg:w-[400px]">
-                    <h3 class="mb-10 text-lg font-semibold text-center md:text-start">Penyaluran dana yang terbuka mewujudkan pembangunan Kabupaten Sukabumi bersama.
+            <div class="md:flex text-center flex-col md:flex-row gap-20 items-center">
+                <div class="md:w-[300px] mx-10 md:mx-0 lg:w-[400px]">
+                    <h3 class="mb-10 text-lg font-semibold text-center md:text-start">Penyaluran dana yang terbuka
+                        mewujudkan pembangunan Kabupaten Sukabumi bersama.
                     </h3>
                     <div class="hidden lg:block">
-                        <button class="bg-blue-500 hover:bg-blue-800 duration-300 px-12 py-3 text-white rounded-lg">Selengkapnya</button>
+                        <button
+                            class="bg-blue-500 hover:bg-blue-800 duration-300 px-12 py-3 text-white rounded-lg">Selengkapnya</button>
                     </div>
                 </div>
-                <div class="flex justify-center md:block lg:w-[500px]">
+                <div class="flex justify-center mx-10 md:mx-0 md:block lg:w-[500px]">
                     <p class=" text-gray-500 text-sm text-center md:text-start md:text-base">
                         Dukung kami dalam menyalurkan bantuan yang tepat sasaran dan memberikan manfaat yang berarti
                         bagi mereka yang membutuhkan.
@@ -243,7 +256,8 @@
                     </p>
                 </div>
                 <div class="lg:hidden flex justify-center my-10">
-                    <button class="bg-blue-500 hover:bg-blue-800 duration-300 px-12 py-3 text-white rounded-lg">Selengkapnya</button>
+                    <button
+                        class="bg-blue-500 hover:bg-blue-800 duration-300 px-12 py-3 text-white rounded-lg">Selengkapnya</button>
                 </div>
                 <div class="md:block hidden">
                     <img class="w-[300px]" src="src/Document.png" alt="">
@@ -252,9 +266,9 @@
         </div>
     </section>
 
-    <!-- TAHAPAN SECTION -->
+    <!-- TAHAPAN SECTION STEPPER DESKTOP -->
     <section>
-        <div class="bg-[#002D3D] text-white h-[380px] py-16">
+        <div class="bg-[#002D3D] text-white h-[380px] hidden md:block py-16">
             <div class="container mx-auto">
                 <h1 class="text-3xl mb-3 font-medium">
                     Tahapan
@@ -266,23 +280,28 @@
                         <div class="absolute w-[900px] -top-[7px]">
                             <ul class="flex justify-between text-center mx-10">
                                 <li class="flex flex-col w-[10px] items-center  text-center">
-                                    <div class="h-5 w-5 bg-white mb-7 rounded-full border-4 border-yellow-500"></div>
+                                    <div class="h-5 w-5 bg-white mb-7 rounded-full border-4 border-yellow-500">
+                                    </div>
                                     <h5 class="text-center text-sm">Proposal Permohonan</h5>
                                 </li>
                                 <li class="flex flex-col w-[10px] items-center  text-center">
-                                    <div class="h-5 w-5 bg-white mb-7 rounded-full border-4 border-yellow-500"></div>
+                                    <div class="h-5 w-5 bg-white mb-7 rounded-full border-4 border-yellow-500">
+                                    </div>
                                     <h5 class="text-center text-sm">Verifikasi Proposal</h5>
                                 </li>
                                 <li class="flex flex-col w-[10px] items-center  text-center">
-                                    <div class="h-5 w-5 bg-white mb-7 rounded-full border-4 border-yellow-500"></div>
+                                    <div class="h-5 w-5 bg-white mb-7 rounded-full border-4 border-yellow-500">
+                                    </div>
                                     <h5 class="text-center text-sm">Verifikasi Lokasi</h5>
                                 </li>
                                 <li class="flex flex-col w-[10px] items-center  text-center">
-                                    <div class="h-5 w-5 bg-white mb-7 rounded-full border-4 border-yellow-500"></div>
+                                    <div class="h-5 w-5 bg-white mb-7 rounded-full border-4 border-yellow-500">
+                                    </div>
                                     <h5 class="text-center text-sm">Bimbingan Teknis</h5>
                                 </li>
                                 <li class="flex flex-col w-[10px] items-center  text-center">
-                                    <div class="h-5 w-5 bg-white mb-7 rounded-full border-4 border-yellow-500"></div>
+                                    <div class="h-5 w-5 bg-white mb-7 rounded-full border-4 border-yellow-500">
+                                    </div>
                                     <h5 class="text-center text-sm">NPHD</h5>
                                 </li>
                                 <li class="flex flex-col w-[10px] items-center  text-center">
@@ -299,24 +318,70 @@
         </div>
     </section>
 
+    <!-- STEPPER MOBILE -->
+    <section>
+        <div class="relative bg-[#002D3D] text-white block md:hidden py-16">
+            <div class="text-center mx-10 md:mx-0">
+                <h1 class="text-3xl mb-3 font-medium">
+                    Tahapan
+                </h1>
+                <p class="mb-14">Tahapan yang perlu dilakukan untuk para pengaju bantuan hibah.</p>
+            </div>
+            <ul class="border-l-4 border-yellow-500  mx-10">
+                <li class="flex items-center mb-7 text-center">
+                    <div class="bg-yellow-500 absolute left-[32px] mr-5 p-1 rounded-full border-4 border-yellow-500">
+                    </div>
+                    <h5 class="text-center text-sm ml-10">Proposal Permohonan</h5>
+                </li>
+                <li class="flex items-center mb-7 text-center">
+                    <div class="bg-white absolute left-[32px] mr-5 p-1 rounded-full border-4 border-yellow-500">
+                    </div>
+                    <h5 class="text-center text-sm ml-10">Verifikasi Proposal</h5>
+                </li>
+                <li class="flex items-center mb-7 text-center">
+                    <div class="bg-white absolute left-[32px] mr-5 p-1 rounded-full border-4 border-yellow-500">
+                    </div>
+                    <h5 class="text-center text-sm ml-10">Verifikasi Lokasi</h5>
+                </li>
+                <li class="flex items-center mb-7 text-center">
+                    <div class="bg-white absolute left-[32px] mr-5 p-1 rounded-full border-4 border-yellow-500">
+                    </div>
+                    <h5 class="text-center text-sm ml-10">Bimbingan Teknis</h5>
+                </li>
+                <li class="flex items-center mb-7 text-center">
+                    <div class="bg-white absolute left-[32px] mr-5 p-1 rounded-full border-4 border-yellow-500">
+                    </div>
+                    <h5 class="text-center text-sm ml-10">NPHD</h5>
+                </li>
+                <li class="flex items-center mb-7 text-center">
+                    <div class="bg-yellow-500 absolute left-[32px] mr-5 p-1 rounded-full border-4 border-yellow-500">
+                    </div>
+                    <h5 class="text-center text-sm ml-10">Pendanaan</h5>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+
     <!-- DAFTAR HIBAH SECTION -->
     <section>
         <div class="container mx-auto pt-16">
             <h1 class="text-3xl font-semibold mb-10 text-center">
                 Daftar Hibah
             </h1>
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center mx-10 md:mx-0">
                 <!-- KATEGORI BUTTON -->
                 <div class="relative group">
                     <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
                         class="text-gray-500 bg-transparent border-2 border-gray-500 focus:outline-none font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
-                        type="button">Kategori <svg class="w-4 h-4 ml-16" aria-hidden="true" fill="none"
+                        type="button">Kategori <svg class="w-4 h-4 ml-8 md:ml-16" aria-hidden="true" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
                             </path>
                         </svg></button>
                     <!-- Dropdown menu -->
-                    <div id="dropdown" class="z-10 absolute hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 group-hover:block group-focus-within:block duration-500 fadeIn">
+                    <div id="dropdown"
+                        class="z-10 absolute hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 group-hover:block group-focus-within:block duration-500 fadeIn">
                         <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownDefaultButton">
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-gray-100">Operasional</a>
@@ -337,13 +402,15 @@
                     </div>
 
                 </div>
-                <div class="relative w-[240px]">
-                    <input class="rounded-full h-10 w-[240px] border-2 border-gray-500" type="text" placeholder="Cari">
+                <div class="relative w-32 md:w-[240px]">
+                    <input class="rounded-full h-10 w-32 md:w-[240px] border-2 border-gray-500" type="text"
+                        placeholder="Cari">
                     <i class="absolute right-6 top-1/2 -translate-y-1/2 fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
             <!-- DAFTAR HIBAH LIST -->
-            <div class="grid lg:grid-cols-3 lg:grid-rows-3 md:grid-cols-2 md:grid-rows-2 gap-20 mt-20 w-full">
+            <div
+                class="grid lg:grid-cols-3 lg:grid-rows-3 md:grid-cols-2 md:grid-rows-2 gap-20 mx-10 md:mx-0 mt-20 w-full">
                 <!-- GRID -->
                 <div class="w-[400px]">
                     <div class="flex gap-7">
@@ -671,7 +738,8 @@
                 </div>
             </div>
             <div class="flex justify-center mt-20">
-                <a class="bg-blue-500 hover:bg-blue-800 duration-300 py-3 px-12 rounded-full text-white" href="">Selengkapnya</a>
+                <a class="bg-blue-500 hover:bg-blue-800 duration-300 py-3 px-12 rounded-full text-white"
+                    href="">Selengkapnya</a>
             </div>
         </div>
     </section>
@@ -706,7 +774,7 @@
                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path
                                     d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                                </svg>
+                            </svg>
                             <span class="sr-only">Twitter page</span>
                         </a>
                     </div>
@@ -743,11 +811,11 @@
             </div>
             <hr class="my-6 sm:mx-auto border-gray-700 lg:my-8" />
             <div class="sm:flex sm:items-center sm:justify-center">
-                <span class="text-sm  sm:text-center text-gray-400">© <a
-                        href="#" class="hover:underline">2023 Diskominfosan™</a>. All Rights Reserved.
+                <span class="text-sm  sm:text-center text-gray-400">© <a href="#" class="hover:underline">2023
+                        Diskominfosan™</a>. All Rights Reserved.
                 </span>
                 <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-                    
+
                 </div>
             </div>
         </div>

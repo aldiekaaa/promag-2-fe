@@ -103,63 +103,50 @@
 
 <body class="">
     <!-- NAVIGATION BAR -->
-    <header class="w-full pt-2 scrol fixed top-0 left-0 flex items-center z-50 border-b-[1px] border-white">
-        <div class="w-full container">
-            <div class="w-full flex items-center relative">
-                <!-- Logo -->
-                <div class="w-[200px] pl-6 pr-10 py-4 mb-2 lg:w-[450px] lg:px-20">
-                    <a href="#home" class="block">
-                        <img src="/src/Diskominfosan.png" alt="Logo" />
-                    </a>
-                </div>
-
-                <div class="lg:w-full flex items-center gap-2 px-2 mb-2">
-                    <!-- Hamburger Navigasi -->
-                    <button id="hamburger" name="hamburger" type="button" class="block  right-4 lg:hidden">
-                        <span class="hamburger-costum transition duration-300 ease-in-out origin-top-right"></span>
-                        <span class="hamburger-costum transition duration-300 ease-in-out"></span>
-                        <span class="hamburger-costum transition duration-300 ease-in-out origin-bottom-right"></span>
-                    </button>
-
-                    <!-- Navigasi -->
-                    <nav id="navbar"
-                        class="hidden w-full absolute py-4 bg-sky-400 shadow-lg rounded-lg top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:mt-2">
-                        <ul class="block lg:flex gap-10 lg:justify-center">
-                            <li class="group">
-                                <a href="#"
-                                    class="mx-4 flex py-3 text-xl text-gray-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Beranda</a>
-                            </li>
-                            <li class="group">
-                                <a href="/program/index.html"
-                                    class="mx-4 flex py-3 text-xl text-gray-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Program</a>
-                            </li>
-                            <li class="group">
-                                <a href="/laporan/index.html"
-                                    class="mx-4 flex py-3 text-xl text-blue-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Laporan</a>
-                            </li>
-                            <li class="group">
-                                <a href="/peraturan/index.html"
-                                    class="mx-4 flex py-3 text-xl text-gray-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Peraturan</a>
-                            </li>
-                            <li class="group">
-                                <a href="/pengumuman/index.html"
-                                    class="mx-4 flex py-3 text-xl text-gray-500 lg:font-semibold hover:text-blue-500 lg:text-base duration-300">Pengumuman</a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <!-- Profile -->
-                    <div id="profile" class="hidden lg:block text-gray-500 hover:text-blue-500 duration-300">
-                        <a href="" class="flex items-center">
-                            <i class="fa-regular fa-user"></i>
-                        </a>
-                    </div>
+    <header class="fixed z-50 w-full">
+        <nav
+            class="flex flex-wrap items-center justify-between bg-white shadow-lg text-white py-5 px-5 md:px-10 z-10 motion-safe:fade-In">
+            <div class="flex flex-no-shrink items-center py-4 text-grey-darkest">
+                <a class="w-36 sm:w-40 md:w-60 lg:w-[200px] drop-shadow-sm" href="#"><img src="/src/Diskominfosan.png" alt=""></a>
+                <div class="font-poppins md:ml-5 ml-2 text-blue-500">
                 </div>
             </div>
-        </div>
+
+            <input class="menu-btn hidden" type="checkbox" id="menu-btn">
+                <label class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" for="menu-btn">
+                    <span class="navicon bg-gray-500 flex items-center relative"></span>
+                </label>
+
+            <ul
+                class="menu md:border-none flex w-full md:w-auto font-poppins gap-10 text-blue-500">
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="#"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Beranda</a>
+                </li>
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="/program/index.html"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Program</a>
+                </li>
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="/laporan/index.html"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Laporan</a>
+                </li>
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="/peraturan/index.html"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Peraturan</a>
+                </li>
+                <li class="hover:bg-gray-500 hover:text-white duration-300 md:hover:text-blue-500 md:hover:bg-transparent md:text-gray-500 font-medium md:mb-0 mb-3 rounded-xl">
+                    <a href="/pengumuman/index.html"
+                        class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Pengumuman</a>
+                </li>
+            </ul>
+            <a class="text-gray-500 hidden md:block" href="">
+                <i class="fa-regular fa-user"></i>
+            </a>
+        </nav>
     </header>
 
-    <section class="bg-gray-200 h-[690px] mt-28">
+    <section class="bg-gray-200 h-[690px] pt-28">
         <div class="container mx-auto pt-10">
             <div class="bg-white rounded-[30px] mt-10 px-20 py-16">
                 <div class="w-[600px]">
